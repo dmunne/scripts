@@ -9,8 +9,9 @@ TOKEN=""
 
 TIME="10"
 URL="https://api.telegram.org/bot$TOKEN/sendMessage"
-TEXT="El torrent _\"$@\"_ ha acabat de descarregar-se."
+EMOJI="🎥"
+TEXT="$EMOJI El torrent _\"$@\"_ ha acabat de descarregar-se."
 
-$CURL -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=markdown" $URL
+$CURL -s --max-time $TIME -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=markdown" $URL > /dev/null
 
 exit 0
